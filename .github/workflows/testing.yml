@@ -30,8 +30,8 @@ jobs:
         run: coverage run -m pytest
       - uses: actions/upload-artifact@v3
         with:
-          name: .coverage
-          path: "."
+          name: coverage
+          path: ".coverage"
           retention-days: 1
   coverage_report:
     runs-on: ubuntu-latest
@@ -45,7 +45,8 @@ jobs:
         run: pip install numpy pytest matplotlib
       - uses: actions/download-artifact@v3
         with:
-          name: .coverage          
+          name: coverage  
+          path: ".coverage"        
       - name: Display structure of downloaded files
         run: ls -R
       - name: "Install coverage"
@@ -54,6 +55,6 @@ jobs:
         run: coverage report
       - uses: actions/upload-artifact@v3
         with:
-          name: coverage.xml
-          path: "."
+          name: coverage_xml
+          path: "coverage.xml"
           retention-days: 14
