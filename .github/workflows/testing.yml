@@ -8,24 +8,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: jpetrucciani/black-check@master
-      with:
-        path: "."
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
         with:
-          python-version: '3.8.10'
-      - name: "Run unittest"
-        run: python -m unittest
-  coverage_report:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
-        with:
-          python-version: '3.8.10'
-      - name: "Run unittest"
-        run: python -m unittest
-  
+          path: "."
