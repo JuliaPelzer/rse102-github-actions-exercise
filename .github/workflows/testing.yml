@@ -31,7 +31,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: coverage
-          path: ".coverage"
+          path: .coverage
           retention-days: 1
   coverage_report:
     runs-on: ubuntu-latest
@@ -46,7 +46,6 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: coverage  
-          path: ".coverage"        
       - name: Display structure of downloaded files
         run: ls -R
       - name: "Install coverage"
@@ -56,5 +55,5 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: coverage_xml
-          path: "coverage.xml"
+          path: .coverage.xml
           retention-days: 14
