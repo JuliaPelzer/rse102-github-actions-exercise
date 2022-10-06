@@ -21,7 +21,7 @@ jobs:
         with:
           python-version: '3.8.10'
       - name: "Install dependencies"
-        run: pip install numpy, pytest, matplotlib
+        run: pip install numpy pytest matplotlib
       - name: "Run pytest"
         run: python -m pytest
       - name: "Install coverage"
