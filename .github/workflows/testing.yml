@@ -13,3 +13,16 @@ jobs:
       - uses: jpetrucciani/black-check@master
         with:
           path: "."
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.8.10'
+      - name: "Run pytest"
+        run: python -m pytest
+      - name: "Install coverage"
+        run: pip install coverage
+      - name: "Run coverage"
+        run: coverage run -m pytest
