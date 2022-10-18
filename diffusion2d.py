@@ -15,6 +15,7 @@ class SolveDiffusion2D:
         """
         # plate size, mm
         self.w = None
+        
         self.h = None
 
         # intervals in x-, y- directions, mm
